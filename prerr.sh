@@ -1,3 +1,4 @@
+# scrip para instalar dependencias de foam 3.1
 sudo apt-get update
 
 sudo apt-get install git-core 

@@ -1,0 +1,479 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\author -1530690446 "FelipeGm,,," 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Instructivo para instalar foam 3.1 (versión beta) 
+\end_layout
+
+\begin_layout Standard
+A 
+\change_deleted -1530690446 1410130792
+continuacion
+\change_inserted -1530690446 1410130792
+continuación
+\change_unchanged
+ se presentan los pasos para descargar foam 3.1 y compilarlo.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Abrir una térmimal y serciorarse de estar en la carpeta personal (se puede
+ ejecutar cd $HOME).
+\end_layout
+
+\begin_layout Enumerate
+Crear una carpeta para la instalacion: mkdir foam
+\end_layout
+
+\begin_layout Enumerate
+Ingresar a la carpeta: cd foam 
+\end_layout
+
+\begin_layout Enumerate
+Obtener la versión 3.1 de foam, para lo que se debe ejecutar:
+\begin_inset space \hspace{}
+\length 67mm
+\end_inset
+
+
+\color blue
+ git clone git://git.code.sf.net/p/openfoam-extend/foam-extend-3.1 openfoam-extend-f
+oam-extend-3.1
+\end_layout
+
+\begin_layout Enumerate
+Una vez ejecutado el comando anterior, ejecute 
+\color blue
+ls 
+\color black
+y debe aparecer en una nueva carpeta llamada: 
+\color blue
+openfoam-extend-foam-extend-3.1
+\end_layout
+
+\begin_layout Enumerate
+Esta carpeta debe ser renombrada de la siguiente forma: 
+\begin_inset space \hspace{}
+\length 67mm
+\end_inset
+
+ 
+\color blue
+mv
+\color inherit
+ 
+\color blue
+openfoam-extend-foam-extend-3.1 foam-extend-3.1
+\end_layout
+
+\begin_layout Enumerate
+Antes de proceder a la compilación es 
+\change_deleted -1530690446 1410131089
+importante
+\change_inserted -1530690446 1410131089
+importante
+\change_unchanged
+ instalar los siguientes paquetes:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Primero se actualiza la base de datos de paquetes, haciendo: 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get update
+\end_layout
+
+\begin_layout Standard
+Luego se deben instalar los siguientes paquetes: 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install git-core 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install build-essential
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install binutils-dev
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install cmake 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install flex 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install bison 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install zlib1g-dev
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install qt4-dev-tools
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install libqt4-dev
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install libncurses5-dev
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install libiberty-dev
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install libxt-dev
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install rpm
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install mercurial
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+sudo apt-get install graphviz
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nota: para realizar esta tarea se preparó el script prerr.sh, dicho script
+ acompaña a esta guia, para ejecutarlo primero se
+\change_inserted -1530690446 1410273672
+ debe copiar en la carpeta foam, 
+\change_deleted -1530690446 1410273674
+ 
+\change_inserted -1530690446 1410273677
+luego se le
+\change_deleted -1530690446 1410273674
+le
+\change_unchanged
+ deben dar permisos haciendo:
+\color blue
+ chmod +x prerr.sh
+\color inherit
+ y 
+\change_inserted -1530690446 1410273689
+finalmente
+\change_deleted -1530690446 1410273687
+luego 
+\change_unchanged
+se ejecuta haciendo 
+\color blue
+./prerr.sh
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A medida que prerr.sh corra preguntará si desea instalar los paquetes a lo
+ cual se debe contestar Y.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Una vez hecho lo anterior se debe ingresar a la carpeta : 
+\color blue
+foam-extend-3.1
+\end_layout
+
+\begin_layout Enumerate
+Alli ingresar a etc y hacer 
+\color blue
+mv prefs.sh-EXAMPLE prefs.sh
+\end_layout
+
+\begin_layout Enumerate
+Luego allí mismo (en etc) editar el archivo bashrc, esto se recomienda hacerlo
+ con nano bashrc 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+dentro de bashrc buscar:
+\end_layout
+
+\begin_layout Standard
+# WM_ARCH_OPTION = 32 | 64
+\end_layout
+
+\begin_layout Standard
+: ${WM_ARCH_OPTION:=
+\color blue
+64
+\color inherit
+}; export WM_ARCH_OPTION 
+\end_layout
+
+\begin_layout Standard
+Aquí hay que cambiar el valor de acuerdo a la arquitectura del linux que
+ se tenga instalado, para saber esto desde la terminal se puede ejecutar
+ uname -m, si al 
+\change_deleted -1530690446 1410131538
+ejecurtarlo
+\change_inserted -1530690446 1410131538
+ejecutarlo
+\change_unchanged
+ se obtiene una salida: x86_64 quiere decir que es 64 bits por lo que se
+ debe dejar el 64, de lo contrario se cambia a 32, es decir :
+\end_layout
+
+\begin_layout Standard
+# WM_ARCH_OPTION = 32 | 64
+\end_layout
+
+\begin_layout Standard
+: ${WM_ARCH_OPTION:=
+\color blue
+32
+\color inherit
+}; export WM_ARCH_OPTION
+\end_layout
+
+\begin_layout Standard
+una vez hecho esto buscar la linea:
+\end_layout
+
+\begin_layout Standard
+# WM_MPLIB = SYSTEMOPENMPI | OPENMPI | MPICH | MPICH-GM | HPMPI | $ 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+: ${WM_MPLIB:=OPENMPI
+\color inherit
+}; export WM_MPLIB 
+\end_layout
+
+\begin_layout Standard
+Si esta aparece de la forma mostrada no hay que modificarla, de no ser así,
+ se debe corregir la linea WM_MPLIB:=OPENMPI.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Una vez hecho todo lo anterior debe ubicarse en la carpeta 
+\color blue
+foam-extend-3.1, 
+\color black
+suponiendo que está en etc bastará con hacer: cd ..
+ 
+\end_layout
+
+\begin_layout Enumerate
+Luego se debe ejecutar 
+\color blue
+.
+ etc/bashrc
+\color inherit
+ (notar el punto) 
+\end_layout
+
+\begin_layout Enumerate
+A continuación se debe ingresar a la carpeta 
+\color black
+ThirdParty
+\color inherit
+ y ejecutar 
+\color blue
+./AllMake.pre
+\color inherit
+ una vez la ejecución de 
+\color blue
+./AllMake.pre
+\color inherit
+ esté concluida se ejecuta 
+\color blue
+./AllMake
+\color inherit
+ (esto puede tardar).
+ Cuando finalice, ejecute de nuevo 
+\color blue
+./AllMake 
+\color inherit
+con el objetivo de verificar que no se presente ningún error.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Una vez concluido el proceso de compilación en thirdParty salir de está
+ carpeta y dentro de la carpeta foam-extend-3.1 volver a ejecutar 
+\color blue
+.
+ etc/bashrc 
+\color black
+y a 
+\change_deleted -1530690446 1410131566
+continuacion
+\change_inserted -1530690446 1410131566
+continuación
+\change_unchanged
+ ejecutar
+\color blue
+ ./Allwmake.firstInstall 
+\color black
+(esto puede tardar hasta 6 horas!) .
+\end_layout
+
+\begin_layout Enumerate
+Ahora para establecer una forma de cargar las 
+\change_deleted -1530690446 1410131574
+librerias
+\change_inserted -1530690446 1410131574
+librerías
+\change_unchanged
+ de openfoam se utiliza un alias, para establecer este alias se debe ir
+ a la carpeta home (cd $HOME) y abrir el archivo .bashrc y al final de dicho
+ archivo incluir la linea: alias of31='source $HOME/foam/foam-extend-3.1/etc/bash
+rc' luego guardar los cambios.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Una vez realizados los pasos anteriores la 
+\change_deleted -1530690446 1410131588
+instalacción
+\change_inserted -1530690446 1410131588
+instalación
+\change_unchanged
+ debe estar operativa.
+ Para cargar todas las 
+\change_deleted -1530690446 1410131591
+librerias
+\change_inserted -1530690446 1410131591
+librerías
+\change_unchanged
+ y ejecutables de openfoam se debe ejecutar en la terminal of31 (alias asignado
+ en el paso anterior).
+
+\change_deleted -1530690446 1410130521
+ 
+\change_unchanged
+ 
+\end_layout
+
+\end_body
+\end_document
